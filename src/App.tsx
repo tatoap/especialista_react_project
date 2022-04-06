@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import Card from './components/Card';
 import Post from './components/Post';
-import Sidebar from './components/Sidebar';
 
 function App() {
   const [post] = useState({
@@ -12,8 +12,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Sidebar post = {post} />
-        <Post post = {post} totalComents = {12} />
+        <Card title='Card'>
+          <Post post = {post} totalComents = {12} />
+        </Card>
       </header>
     </div>
   );
