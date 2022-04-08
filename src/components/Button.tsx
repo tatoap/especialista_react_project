@@ -1,10 +1,15 @@
 import { Component } from "react";
 
-class Button extends Component {
+interface ButtonProps {
+    onClick?: () => any
+}
+
+class Button extends Component<ButtonProps> {
     render () {
-        return <div>
-            todo: button
-        </div>
+        console.log(this.props)
+        return <button onClick={this.props.onClick}>
+            { this.props.children }
+        </button>
     }
 }
 
