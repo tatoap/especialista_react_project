@@ -21,14 +21,14 @@ class Button extends Component<ButtonProps, ButtonState> {
 
     componentDidMount () {
         const timerId = setInterval(() => {
-            console.log('estou rodando')
+            //console.log('estou rodando')
         }, 5000)
 
         this.setState({timerId})
     }
 
     componentWillUnmount () {
-        console.log('Button será desmontado')
+        //console.log('Button será desmontado')
         if (this.state.timerId) {
             clearInterval(this.state.timerId)
         }
@@ -43,7 +43,7 @@ class Button extends Component<ButtonProps, ButtonState> {
     }*/
 
     render () {
-        console.log('render')
+        //console.log('render')
         return <button 
             onClick={() => {
                 this.setState({
