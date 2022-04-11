@@ -1,20 +1,12 @@
 import './App.css';
+import Form from './components/Form';
 
 function App() {
-  console.log('renderizou app')
-
-  function handleClick (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    e.preventDefault()
-  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <form action='/test'>
-          <button onClick={handleClick}>
-            Clique em mim
-          </button>
-        </form>
+        <Form />
       </header>
     </div>
   );
