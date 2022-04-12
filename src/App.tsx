@@ -1,9 +1,16 @@
-import { toNamespacedPath } from 'node:path/win32';
+import { useEffect, useState } from 'react';
 import './App.css';
-import Form from './components/Form';
 
 function App() {
-  const names = ['Renato', 'Henrique', 'Eliana', 'Roseli']
+  const [names, setNames] = useState(['Renato', 'Henrique', 'Eliana', 'Roseli'])
+
+  useEffect(() => {
+    console.log('componente foi montado')
+
+    return () => {
+      console.log('componente foi desmontado')
+    }
+  }, [])
 
   return (
     <div className="App">
@@ -13,6 +20,11 @@ function App() {
             names.map((name, index) => <li key={index}>{name}</li>)
           }
         </ul>
+        <button onClick={() => {
+          setNames([...names, 'Jeremias'])
+        }}>
+          Adicionar Jeremias
+        </button>
       </header>
     </div>
   );
